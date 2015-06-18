@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta name="format-detection" content="telephone=no" />
+   
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="lazyload.js"></script>
+  <meta charset="utf-8">
+  <title>延迟加载</title>
+  <style type="text/css">
+    .content{
+      margin-top:44px;  
+    }
+
+    .item img{
+      min-height:50px;
+      min-width:50px;
+    }
+    .list{
+      border: 1px solid #000;
+      overflow:scroll;
+      height: 700px;
+    }
+  </style>
+</head>
+<body ng-app="myApp" class="">
+  <h1>延迟加载</h1>
+  <div ng-controller="myCtrl" class="list yxj-image-container">
+    <div class="item" ng-repeat="src in images">
+      <img class="yxj-image-preload" ng-src="{{src}}" alt="">
+    </div>
+  </div>
+</body>
+</html>
